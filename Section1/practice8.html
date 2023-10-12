@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일곱 난쟁이</title>
+</head>
+<body>
+<script>
+
+function solution(arr){
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  } 
+    for(let i = 0; i < arr.length-1 ; i++) {
+      for(let j = 1; j < arr.length ; j++) {
+            if(sum - (arr[i]+arr[j]) == 100) {
+              arr.splice(i,1);
+              arr.splice(j,1);
+        }
+      }
+    }
+  return arr;
+}
+
+function solution2(arr){
+  let answer = arr; // 배열 복사
+  let sum = arr.reduce((a,b)=> a+b,0);
+  for(let i = 0; i<8; i++) {
+    for(let j = i+1; i<9; j++) {
+
+    }
+  }
+}
+
+let arr=[22, 7, 21, 19, 10, 15, 25, 8, 13];
+console.log(solution(arr));
+</script>
+  
+</body>
+</html>
