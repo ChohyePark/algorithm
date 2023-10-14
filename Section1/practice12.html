@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>대문자로 통일</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){                      
+              let answer = "";
+              for (let i = 0; i < s.length ; i++) {
+                if(s[i] == s[i].toLowerCase()) { // 문자열이 소문자인지 확인
+                  answer += s[i].toUpperCase(); // 소문자인 경우 toUpperCase() 함수를 통해서 대문자로 바꿔줌
+                } else {answer += s[i]} // 대문자인 경우에는 그대로 문자열에 추가
+              }
+              return answer;
+            }    
+            let str="ItisTimeToStudy";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
