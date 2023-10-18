@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>중복 문자 제거</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){    
+              let answer = "";
+              
+              // indexOf - 첫번째로 발견된 문자의 인덱스만 리턴해줌
+              // indexOf (첫번째 인자, 두번째 인자 3) 두번째 인자를 추가하면 3번 인덱스
+              // 이후로 발견되는 문자의 인덱스 값을 리턴해줌
+              // 찾는 문자가 없으면 -1을 리턴해준다.
+              for(let i=0; i < s.length ; i++) {
+               if(s.indexOf(s[i]) === i) answer += s[i];
+              }
+              return answer;
+          }
+            console.log(solution("ksekkset"));
+        </script>
+    </body>
+</html>
