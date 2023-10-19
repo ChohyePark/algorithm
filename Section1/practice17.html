@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>중복 단어 제거</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+              const arr = new Set(s); // Set을 사용하여 중복 요소 제거
+              const answer = [...arr]; // 배열이나 문자열과 같이 반복 가능한 객체를
+              // 하나씩 펼쳐서 리턴함
+              
+              return answer;
+          
+            }
+            let str=["good", "time", "good", "time", "student"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
