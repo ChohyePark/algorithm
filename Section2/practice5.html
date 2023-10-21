@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>등수 구하기</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){  
+                let answer = [];
+                for(let i = 0; i < arr.length; i++){
+                  let count = 1;
+                  for(let j = 0; j < arr.length; j++){
+                    if(arr[j]>arr[i]) { // 자기보다 높은 점수를 찾을때마다 밀려난 등수를 증가시킴
+                      count++;
+                    }
+                  }
+                  answer.push(count);
+                }
+                return answer;
+              }
+            let arr=[87, 92, 92, 100, 76];
+            console.log(solution(arr));
+            // 배열 초기화 방법 -> Array.from({length:arr.length}, ()=>1) 모두 1로 초기화
+        </script>
+    </body>
+</html>
