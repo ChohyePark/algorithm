@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>희문 문자열</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+              let reverseArr = [];
+              let answer = "";
+              for(let i = 0; i < s.length ; i++) {
+                reverseArr.unshift(s[i]); // 문자열 뒤집기
+              }
+              if(s.toUpperCase() == reverseArr.join("").toUpperCase()) { // 둘다 대문자로 바꿔서 비교하기, toLowerCase()도 가능 
+                answer += "YES";
+              } else {
+                answer += "NO";
+              }
+              return answer;
+            }
+            let str="goooG";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
