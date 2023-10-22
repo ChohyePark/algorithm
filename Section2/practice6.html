@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>격자판 최대 합</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){ 
+              let answer ; 
+              let col = [];
+              let row = [];
+              let diagonalsum = 0;
+              let diagonalsum2 = 0;
+              for(let i = 0; i < arr.length ; i++){
+                  let rownum = 0; // 행의 합 
+                  let colnum = 0; // 열의 합
+                  diagonalsum += arr[i][i]; // 첫번째 대각선 합
+                  diagonalsum2 += arr[i][arr.length-i-1];// 두번째 대각선 합
+                  // 5-0-1 4
+                  // 5-1-1 3
+                  // 5-2-1 2
+                  // 5-3-1 1
+                  // 5-4-1 0
+                for(let j = 0; j < arr.length; j++) {
+                  rownum += arr[i][j];
+                  colnum += arr[j][i];
+                }
+                row.push(rownum); 
+                col.push(colnum); 
+              }
+              // row, col 배열 펼쳐서 행의 합, 열의 합, 대각선 합 중에 가장 큰 값 찾기
+              answer = Math.max(...row,...col,diagonalsum,diagonalsum2);
+              return answer;
+            }
+            let arr=[[10, 13, 10, 12, 15], 
+                     [12, 39, 30, 23, 11],
+                     [11, 25, 50, 53, 15], 
+                     [19, 27, 29, 37, 27],
+                     [19, 13, 30, 13, 19]];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
