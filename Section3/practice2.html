@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>유효한 팰린드롬</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer = "";
+                let string = s.toLowerCase().match(/[a-z]/gi); // 문자열 소문자로 통일 & 알파벳만 추출 => match 함수 배열 반환 일치하는 것이 없으면 null 
+                
+                if(string.join("") === string.reverse().join("")) {
+                  answer += "YES"
+                } else {answer += "NO"}
+                
+                return answer;       
+            }
+            
+            let str="found7, time: study; Yduts; emit, 7Dnuof";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
