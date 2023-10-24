@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>숫자만 추출</title>
+    </head>
+    <body>
+        <script>
+          function solution(str){
+            return  answer = Number(str.match(/[0-9]/gi).join(""));
+            // 숫자로 형변환 할때 숫자로 시작하는 문자열에서 앞의 0은 무시된다
+            // 해석 가능한 숫자가 없는 경우 NaN 
+
+          }
+            
+            let str="g0en2T0s8eSoft";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
