@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>졸업 선물</title>
+    </head>
+    <body>
+        <script>
+            function solution(m, product){
+               let answer = 0;
+                product.sort((a,b) => (a[0]+a[1])-(b[0]+b[1]));
+                // 오름차순 정렬, 가장 저렴한 제품부터 정렬
+                
+                for(let i = 0; i<product.length; i++) {
+                    let money = m-(product[i][0]/2 + product[i][1]); // 상품에 할인 적용 후 남은 금액
+                    let cnt = 1;
+                    for(let j=0; j < product.length; j++) {
+                        if(j!==i && (product[j][0]+product[j][1])>money)break;
+                        if(j!==i && (product[j][0]+product[j][1])<=money){
+                            money-=(product[j][0]+product[j][1]);
+                            cnt++;
+                            // i는 할인된 상품이기 때문에 빼야하고, 남은 예산보다 작거나 같아야한다  
+                        } 
+                    }
+                    answer = Math.max(answer, cnt); 
+                }
+                return answer;
+            }
+            
+            // 상품 하나를 50% 할인해서 살수 있는 쿠폰을 하나 갖고있음 
+            // 상품의 가격과 배송비
+            let arr=[[6, 6], [2, 2], [4, 3], [4, 5], [10, 3]];
+            console.log(solution(28, arr));
+        </script>
+    </body>
+</html>
