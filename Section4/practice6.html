@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>깊은 복사,얕은 복사</title>
+</head>
+<body>
+  <script>
+      var arrA = ['a', 'b', 'c', 'd'];
+      var arrB = arrA;
+      console.log('arrA : ', arrA);
+      console.log('arrB : ', arrB);
+
+      console.log('값 변경 후');
+
+      arrA[3] = 'e';
+      arrB[4] = 'f';
+      console.log('arrA : ', arrA);
+      console.log('arrB : ', arrB);
+  </script>
+</body>
+</html>
