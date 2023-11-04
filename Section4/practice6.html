@@ -3,21 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>깊은 복사,얕은 복사</title>
+  <title>lodash 깊은 복사</title>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 </head>
 <body>
   <script>
-      var arrA = ['a', 'b', 'c', 'd'];
-      var arrB = arrA;
-      console.log('arrA : ', arrA);
-      console.log('arrB : ', arrB);
+    const obj = {
+          a: 1,
+          b: {
+            c: 2,
+          },
+        };
 
-      console.log('값 변경 후');
+        const copiedObj = _.cloneDeep(obj);
 
-      arrA[3] = 'e';
-      arrB[4] = 'f';
-      console.log('arrA : ', arrA);
-      console.log('arrB : ', arrB);
+        copiedObj.b.c = 3
+
+        console.log(obj.b.c === copiedObj.b.c);
   </script>
+  
 </body>
 </html>
