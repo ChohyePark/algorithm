@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>중복되지 않는 숫자만 출력</title>
+</head>
+<body>
+  <script>
+  const arr = [2, 2, 3, 4, 4];
+  let answer;
+
+
+  arr.forEach(item => {
+  if (arr.indexOf(item) === arr.lastIndexOf(item)) {
+    // indexOf - 배열에서 해당 값 첫번째 인덱스 반환
+    // lastIndexOf - 배열에서 해당 값 마지막 인덱스 반환
+    // 두개의 값이 같다면 배열에 중복된 값이 없고 하나의 값만 있는것
+    answer = item;
+    }
+  });
+
+  console.log(answer);
+
+  </script>
+  
+</body>
+</html>
