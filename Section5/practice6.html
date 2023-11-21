@@ -6,7 +6,16 @@
     <body>
         <script>
             function solution(k, arr){
-                let answer;
+                // 슬라이딩 윈도우 알고리즘
+                let answer = 0,sum = 0;
+                for(let i = 0; i < k; i++) sum += arr[i]; // K번째까지 누적 합 구하기
+                answer = sum;
+                for(let i = k; i < arr.length; i++) { // 배열 인덱스 한칸씩 옮기면서 비교
+                    sum += (arr[i]-arr[i-k]); // 한칸 씩 옮길때마다 앞에 있는 인덱스 값 빼기
+                    // k번째 연속 값 유지
+                    answer = Math.max(answer,sum);
+                }
+                return answer;
             }
             
             let a=[12, 15, 11, 20, 25, 10, 20, 19, 13, 15];
