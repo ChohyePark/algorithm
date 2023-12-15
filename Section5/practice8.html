@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>아나그램</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b){
+                let answer;
+                let str1 = [];
+                let str2 = [];
+          
+                // 문자열 배열로 만든 후, 정렬 시키기
+                for(let x of a) {
+                  str1.push(x) 
+                  str1 = str1.sort();
+                }
+
+                for(let x of b) {
+                  str2.push(x)
+                  str2 = str2.sort();
+                }
+
+                // 배열 동등 비교
+                if(str1.length === str2.length) {
+                  if(str1.every((v,i) => v === str2[i])) {
+                    answer = "YES"
+                  } else {
+                    answer = "NO"
+                  }
+                } else {
+                    answer = "NO"
+                  }
+                return answer;
+            }
+            
+            let a="AbaAeCe";
+            let b="baeeACA";
+            console.log(solution(a, b));
+        </script>
+    </body>
+</html>
