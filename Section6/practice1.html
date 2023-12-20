@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>[자료구조 스택,큐]올바른 괄호</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+               let rCount = 0;
+               let lCount = 0; 
+               for(x of s) {
+                if(x === ")") rCount++;
+                else if(x === "(") lCount++; 
+              }
+              if (rCount === lCount) return "YES";
+              else return "NO";
+            }
+            
+            let a="(()()))";
+            console.log(solution(a));
+        </script>
+    </body>
+</html>
