@@ -1,0 +1,43 @@
+
+
+.container{
+  border: 1px solid black;
+  height: 600px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  gap: 10px;
+}
+
+.title {
+  font-size: 32px;
+  width: 100%;
+  justify-content: start;
+}
+
+.input-box {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+}
+
+#content {
+  height: 20px;
+  width: 70%;
+  border: 3px solid black;
+}
+
+#btn {
+  background-color:black;
+  color: white;
+  font-size: 20px;
+  width: 35px;
+  border: none;
+}
+
+#btn:hover {
+  cursor: pointer;
+}
