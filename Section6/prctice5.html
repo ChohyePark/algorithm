@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>공주 구하기[큐]</title>
+    </head>
+    <body>
+        <script>
+            function solution(n, k){
+              let answer;
+              let prince = [];
+              let queue = Array.from({length:n},(v,i)=>i+1) // 배열 초기화
+              
+              while(queue.length) {
+                for(let i=1; i<k; i++) queue.push(queue.shift());
+                console.log(queue.shift());
+                if(queue.length ===1) answer = queue.shift();
+              }
+              console.log(prince);
+            }
+
+            console.log(solution(8, 3));
+        </script>
+    </body>
+</html>

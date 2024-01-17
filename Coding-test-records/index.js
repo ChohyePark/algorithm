@@ -14,6 +14,7 @@ const onClickCheckEvent = (e) => {
 
 const onClickAddEvent = () => {
   let addItem = document.getElementById("content");
+  document.getEle
   if (addItem.value === "") {
     alert("할일을 입력해주세요")
     return false;
