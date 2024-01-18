@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>교육 과정 설계</title>
+    </head>
+    <body>
+        <script>
+            function solution(need, plan){
+                let answer;
+                let needs = [...need] // 스프레드 연산자를 이용하여 배열로 반환
+                let plans = [...plan]
+                let tmp = [];
+                
+                while(plans.length !== need.length) {
+                  for(let x of plan) {
+                    if(needs.includes(x)) plans.push(plans.shift());
+                    else plans.shift(); 
+                  }
+                }
+
+                if(plans.join("") === needs.join("")) {
+                  answer  = "YES"
+                } else answer = "NO"
+                
+                return answer
+            }
+
+            let a="CBA";
+            let b="CBDAGE";
+            console.log(solution(a, b));
+        </script>
+    </body>
+</html>
