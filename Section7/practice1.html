@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>선택 정렬</title>
+    </head>
+    <body>
+        <script>
+          // 선택 정렬 : 첫 번째 자료를 두 번째 자료부터 마지막 자료까지 차례대로 비교하여 가장 작은 값을 찾아 첫번째에 놓고, 두 번째 자료를 세 번째 자료부터 마지막 자료까지 차례대로 비교하여 그 중 가장 작은 값을 찾아 두번째 위치에 놓는 과정을 반복하며 정렬을 수행한다,
+            function solution(arr){
+              let answer = arr; // 얕은 복사, arr이 바뀌면 answer도 함께 바뀐다.
+
+              for(let i=0; i < arr.length; i++) {
+                let idx = i;
+                for(let j=i+1; j < arr.length; j++) {
+                  if(arr[j] < arr[idx]) idx = j;
+                  [arr[i],arr[idx]] = [arr[idx],arr[i]]
+                }
+              }
+
+              return answer;
+            }
+
+            let arr=[13, 5, 11, 7, 23, 15];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
