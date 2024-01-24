@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>버블 정렬 복습</title>
+</head>
+<body>
+  <script>
+    function solution (arr) {
+      let answer = arr;
+
+      for(let i = 0; i < arr.length; i++) {
+        for(let j = 0 ; j < arr.length-i-1; j++ ) {
+          if(arr[j] > arr[j+1]) {
+            [arr[j],arr[j+1]] = [arr[j+1],arr[j]]
+          }
+        }
+      }
+
+      return answer;
+    }
+
+    
+    console.log(solution([12,34,123,55,77,23,6]));
+
+
+  </script>
+  
+</body>
+</html>
